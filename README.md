@@ -30,44 +30,40 @@ Things you may want to cover:
 |name|string|null:false|
 |email|string|null: false|
 |password|string|null: false|
-|password combination|string|null: false|
 
 ### Association
 - has_many :comments
 - has_many :groups
-- has_many :groups, through:groups_users
 
 
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text||
 |user_id|integer|null: false, foreign_key: true|
-|image|integer| foreign_key: true|
-|group_id|integer|null: false|
+|image|string| |
+|group_id|integer|null: false
 
 ### Association
-- has_many :groups
+- belongs_to :group
 - belongs_to :user
 
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false|
+|name|string|null: false
 
 ### Association
-- belongs_to :message
-- has_many :users
-- has_many :users, through:groups_users
+- has_many :message
+- has_many :user
 
-
-## groups_users
+## grops_users
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|groups_id|integer|null: false, foreign_key: true|
+|grops_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :user
+- belongs_to :user
