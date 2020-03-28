@@ -1,0 +1,35 @@
+.main_chat
+  .main_header
+    .main_header__left
+      %h2.main_header__left__text
+        text
+      %h2.main_header__left__member
+        Member : masa
+    .main_header__right
+      Edit
+  .messages
+    .messages__list
+      .messages__list__box
+        %p.messages__list__box__name
+          masa
+        %p.messages__list__box__time
+          2019/11/20(web) 17:43:01
+      %p.messages__comment
+        おはよう!!
+
+    .messages__list
+      .messages__list__box
+        %p.messages__list__box__name
+          masa
+        %p.messages__list__box__time
+          2019/11/20(web) 17:43:01
+      %p.messages__comment
+        おはよう!!
+      
+  .form
+    %form.form__box
+      %input.form__box__input{placeholder:"type a message"}
+      %label{class: "input-box__image"}
+        = icon('fas', 'image')
+        %input{type: "file"}
+      %input.form__box__send{value:"Send"}
