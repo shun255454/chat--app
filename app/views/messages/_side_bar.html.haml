@@ -2,15 +2,14 @@
   .side_header
     .side_header__box
       %p.side_header__box__name
-        masa
+        = current_user.name
       %ul.side_header__box__menu
         %li.side_header__box__menu__icon
           =link_to "#",class:"side_header__box__menu__icon__edit" do
             %i.fas.fa-edit
         %li.side_header__box__menu__icon    
-          =link_to "#",class:"side_header__box__menu__icon__cog" do
-            %i.fas.fa-cog
-
+          = link_to edit_user_path(current_user) ,class:"side_header__box__menu__icon__cog" do
+            = icon('fas', 'cog', class: 'icon')
   .groups
     .groups__group
       %p.grops__group__name
