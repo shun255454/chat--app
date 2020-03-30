@@ -8,28 +8,30 @@
     .main_header__right
       Edit
   .messages
-    .messages__list
-      .messages__list__box
-        %p.messages__list__box__name
-          masa
-        %p.messages__list__box__time
-          2019/11/20(web) 17:43:01
-      %p.messages__comment
-        おはよう!!
+    = render @messages
+    -# .messages__list
+    -#   .messages__list__box
+    -#     %p.messages__list__box__name
+    -#       masa
+    -#     %p.messages__list__box__time
+    -#       2019/11/20(web) 17:43:01
+    -#   %p.messages__comment
+    -#     おはよう!!
 
-    .messages__list
-      .messages__list__box
-        %p.messages__list__box__name
-          masa
-        %p.messages__list__box__time
-          2019/11/20(web) 17:43:01
-      %p.messages__comment
-        おはよう!!
-      
+    -# .messages__list
+    -#   .messages__list__box
+    -#     %p.messages__list__box__name
+    -#       masa
+    -#     %p.messages__list__box__time
+    -#       2019/11/20(web) 17:43:01
+    -#   %p.messages__comment
+    -#     おはよう!!
+
   .form
-    %form.form__box
-      %input.form__box__input{placeholder:"type a message"}
-      %label{class: "input-box__image"}
-        = icon('fas', 'image')
-        %input{type: "file"}
-      %input.form__box__send{value:"Send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'new_message__input', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'new_message__send'

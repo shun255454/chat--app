@@ -113,23 +113,23 @@
     background-color:#fafafa;
     height: calc(100vh - 190px);
     padding: 46px 40px;
-    &__list {
+    .upper-message {
       padding-bottom: 40px;
-      &__box {
+      .box {
         display:flex;
         margin-bottom: 10px;
-        &__name {
+        .upper-message__user-name {
           color: #333333;
           font-size:16px;
           font-weight: bold;
         }
-        &__time {
+        .upper-message__date {
           color: #999999;
           font-size:12px;
           margin-left: 10px;
         }
       }
-      &__comment {
+      .lower-message__content {
         color: #434a54;
         font-size:14px;
       } 
@@ -141,38 +141,40 @@
     background-color: #ddd;
     height: 90px;
     padding: 20px 40px;
-    width:100%;
-    &__box{
-      display:flex;
+    
+    .new_message {
       position: relative;
-        &__input{
-          width: 100%;
-          height:50px;
-          padding:0px 40px 0px 10px;
-          border-style: none;
-          
+      height: 100%;
+      display:flex;
+      &__input{
+        display:flex;
+        position: relative;
+        width:100%;
         }
+      .form__mask {
         .input-box__image{
-            height:50px;
-            width: 100px;
+          .icon{
             font-size:25px;
             position: absolute;
-            right:50px;
-            top:8px;
-            input{
-              display:none;
-            }
+            right:130px;
+            top:13px;
           }
-        &__send{
-          background-color: #38aef0;
-          border-style: none;
-          text-align: center;
-          height: 50px;
-          width: 100px;
-          color: white;
-          margin-left: 15px;
+          .hidden{
+            display: none;
+          }
         }
+      }
 
+      &__send{
+        background-color: #38aef0;
+        border-style: none;
+        text-align: center;
+        padding: 0 30px;
+        height: 50px;
+        width: 100px;
+        color: white;
+        margin-left: 15px;
+      }
     }
   }
 }
