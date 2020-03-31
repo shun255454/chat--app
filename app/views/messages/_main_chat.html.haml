@@ -2,11 +2,15 @@
   .main_header
     .main_header__left
       %h2.main_header__left__text
-        text
+        = @group.name
       %h2.main_header__left__member
-        Member : masa
-    .main_header__right
-      Edit
+        Member : 
+        - @group.users.each do |user|
+          = user.name 
+    = link_to edit_group_path(@group) do
+      .main_header__right
+        Edit
+      
   .messages
     = render @messages
     -# .messages__list
