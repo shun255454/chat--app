@@ -307,8 +307,10 @@
     padding: 46px 40px;
     overflow: scroll;
     box-sizing: border-box;
-    .upper-message {
+    .message{
       padding-bottom: 40px;
+    }
+    .upper-message {
       display:flex;
       .upper-message__user-name{
         color: #333333;
